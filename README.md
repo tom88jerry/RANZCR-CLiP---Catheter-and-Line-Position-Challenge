@@ -46,10 +46,16 @@ There is a clear improvement of using larger image in this competition. Top team
 
 Since it is multi-label classification, I used BCEWithLogitsLoss and Focal loss functions. 
 
+Regarding to augmentation, I used a simple light augmentation + CLAHE, coarsedropout, and cutout. I found that too heavy augmentation dropped the accuracy and took longer to converge. 
+
 **My final ranking: Private LB 49/1549 teams 0.972 (Top 4% silver medal🥈) Team 2 members**
 
 ## Lessons learned, 
 I learned a lot in this competition. 
 Firstly, attention modules. I tried different attention modules such as Convolutional Block Attention Module (CBAM), channel attention module, spatial attention module, and efficient channel attention module (ECA).
+CBAM paper: https://arxiv.org/abs/1807.06521
+Efficient channel attention paper: https://arxiv.org/abs/1910.03151
+
 Secondly, multi-stages training (Distrilled learning) to improve the accuracy.
+
 Thirdly, segmentation. I did not implement this in my model due to limited resouces of GPU, but many competitiors reported a big boost using both segementation and classification. It is very interesting approach.
